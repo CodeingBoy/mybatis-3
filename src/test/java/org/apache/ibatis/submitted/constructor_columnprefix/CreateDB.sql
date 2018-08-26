@@ -14,17 +14,24 @@
 --    limitations under the License.
 --
 
-DROP TABLE country IF EXISTS;
-DROP TABLE planet IF EXISTS;
+drop table articles if exists;
+drop table authors if exists;
 
-CREATE TABLE country (
-  Id int IDENTITY,
-  countryname varchar(255) DEFAULT NULL,
-  countrycode varchar(255) DEFAULT NULL,
+create table articles (
+  id int,
+  name varchar(20),
+  author_id int,
+  coauthor_id int
 );
 
-CREATE TABLE planet (
-  id int IDENTITY,
-  name varchar(32) DEFAULT NULL,
-  code varchar(64) GENERATED ALWAYS AS (name || '-' || id)
+create table authors (
+  id int,
+  name varchar(20)
 );
+
+insert into articles (id, name, author_id, coauthor_id) values
+(1, 'Article 1', 1, 2),
+(2, 'Article 2', 3, 1);
+
+insert into authors (id, name) values
+(1, 'Mary'), (2, 'Bob'), (3, 'Jane');

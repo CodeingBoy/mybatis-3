@@ -13,22 +13,36 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
+package org.apache.ibatis.submitted.keygen;
 
-package org.apache.ibatis.reflection;
+public class Planet {
+  private Integer id;
 
-import java.util.Optional;
+  private String name;
 
-/**
- * @deprecated Since 3.5.0, Will remove this class at future(next major version up).
- */
-@Deprecated
-public abstract class OptionalUtil {
+  private String code;
 
-  public static Object ofNullable(Object value) {
-    return Optional.ofNullable(value);
+  public Integer getId() {
+    return id;
   }
 
-  private OptionalUtil() {
-    super();
+  public void setId(Integer id) {
+    this.id = id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+
+  public String getCode() {
+    return code;
+  }
+
+  public void setCode(String code) {
+    this.code = code;
   }
 }

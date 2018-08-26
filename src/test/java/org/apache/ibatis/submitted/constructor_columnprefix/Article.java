@@ -13,22 +13,39 @@
  *    See the License for the specific language governing permissions and
  *    limitations under the License.
  */
+package org.apache.ibatis.submitted.constructor_columnprefix;
 
-package org.apache.ibatis.reflection;
+public class Article {
 
-import java.util.Optional;
+  private EntityKey id;
 
-/**
- * @deprecated Since 3.5.0, Will remove this class at future(next major version up).
- */
-@Deprecated
-public abstract class OptionalUtil {
+  private String name;
 
-  public static Object ofNullable(Object value) {
-    return Optional.ofNullable(value);
+  private Author author;
+
+  private Author coauthor;
+
+  public Article(EntityKey id, String name, Author author, Author coauthor) {
+    super();
+    this.id = id;
+    this.name = name;
+    this.author = author;
+    this.coauthor = coauthor;
   }
 
-  private OptionalUtil() {
-    super();
+  public EntityKey getId() {
+    return id;
+  }
+
+  public String getName() {
+    return name;
+  }
+
+  public Author getAuthor() {
+    return author;
+  }
+
+  public Author getCoauthor() {
+    return coauthor;
   }
 }
